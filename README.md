@@ -123,3 +123,9 @@ element.classList.remove("new-class");
 element.classList.toggle("new-class"); // Will add or remove class depending if it is there or not
 element.classList.toggle("new-class", false); // Will remove class if false is passed or add class if true is passed
 ```
+
+## Modifying styles
+```javascript
+const element = document.getElementById("span-1");
+element.style.backgroundColor = "red"; // Notice the use of camelCase for snake-case css properties
+```
