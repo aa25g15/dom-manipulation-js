@@ -78,3 +78,27 @@ If you have to display text from user input, it is better to create an element, 
 */
 ```
 
+* Removing elements
+```javascript
+const elementToRemove = document.getElementById("to-remove");
+const container = document.getElementById("container");
+
+elementToRemove.remove(); // Will delete from the DOM
+container.append(elementToRemove); // Will add it again
+
+container.removeChild(elementToRemove); // Will also remove from DOM, same thing
+```
+
+* Modifying attributes
+```html
+<span title="hello world" id="span-1">I am a span</span>
+```
+```javascript
+const element = document.getElementById("span-1");
+
+console.log(element.getAttribute("title")); // hello world
+element.setAttribute("title", "good job"); // Will set to good job
+console.log(element.title); // good job, does the same thing
+element.title = "hello world"; // Will set title back to hello world
+element.removeAttribute("title"); // Will remove title attribute from element
+```
