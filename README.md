@@ -102,3 +102,15 @@ console.log(element.title); // good job, does the same thing
 element.title = "hello world"; // Will set title back to hello world
 element.removeAttribute("title"); // Will remove title attribute from element
 ```
+
+* Data attributes
+```html
+<span id="span-1" data-span-name="cool span">I am a span</span>
+```
+```javascript
+const element = document.getElementById("span-1");
+
+console.log(element.dataSet.spanName); // cool span, notice the automatic conversion from snake-case to camelCase
+element.dataSet.spanName = "hot span"; // will set to hot span
+element.dataSet.spanType = "good"; // will add a new data-span-type="good" attribute on the element node in the DOM
+```
