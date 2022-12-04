@@ -1,6 +1,6 @@
 # DOM Manipulation With JS
 
-* Select elements from the DOM
+## Select elements from the DOM
 ```javascript
 const element = document.getElementById("id");
 ```
@@ -14,7 +14,7 @@ const element = document.querySelectorAll("css-selector-1, css-selector-2");
 const element = document.getElementsByClassName("class-name");
 ```
 
-* Creating an element and then appending it to a container
+## Creating an element and then appending it to a container
 ```javascript
 const newElement = document.createElement("div"); // Or some other type such as <a> or <span>
 newElement.innerText = "Hello World";
@@ -31,7 +31,7 @@ Note - You could also use container.appendChild, the result will be the same, th
 */
 ```
 
-* Difference between innerText and textContent
+## Difference between innerText and textContent
 Consider the following code:
 ```html
 <div id="container">
@@ -60,13 +60,13 @@ if(container){
 }
 ```
 
-* Difference between append and appendChild
+## Difference between append and appendChild
 ```javascript
 container.append("Hello World", "John Doe"); // Possible with both strings and nodes
 container.appendChild("Hello World", "John Doe") // Error - Multiple arguments are not supported and only nodes can be passed
 ```
 
-* Inserting HTML via JS
+## Inserting HTML via JS
 ```javascript
 container.innerHTML = "<strong>Hello World</strong>" // Will render the text as bold
 
@@ -78,7 +78,7 @@ If you have to display text from user input, it is better to create an element, 
 */
 ```
 
-* Removing elements
+## Removing elements
 ```javascript
 const elementToRemove = document.getElementById("to-remove");
 const container = document.getElementById("container");
@@ -89,7 +89,7 @@ container.append(elementToRemove); // Will add it again
 container.removeChild(elementToRemove); // Will also remove from DOM, same thing
 ```
 
-* Modifying attributes
+## Modifying attributes
 ```html
 <span title="hello world" id="span-1">I am a span</span>
 ```
@@ -103,7 +103,7 @@ element.title = "hello world"; // Will set title back to hello world
 element.removeAttribute("title"); // Will remove title attribute from element
 ```
 
-* Data attributes
+## Data attributes
 ```html
 <span id="span-1" data-span-name="cool span">I am a span</span>
 ```
@@ -113,4 +113,13 @@ const element = document.getElementById("span-1");
 console.log(element.dataSet.spanName); // cool span, notice the automatic conversion from snake-case to camelCase
 element.dataSet.spanName = "hot span"; // will set to hot span
 element.dataSet.spanType = "good"; // will add a new data-span-type="good" attribute on the element node in the DOM
+```
+
+## Modifying classes
+```javascript
+const element = document.getElementById("span-1");
+element.classList.add("new-class");
+element.classList.remove("new-class");
+element.classList.toggle("new-class"); // Will add or remove class depending if it is there or not
+element.classList.toggle("new-class", false); // Will remove class if false is passed or add class if true is passed
 ```
