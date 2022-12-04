@@ -59,3 +59,22 @@ if(container){
   */
 }
 ```
+
+* Difference between append and appendChild
+```javascript
+container.append("Hello World", "John Doe"); // Possible with both strings and nodes
+container.appendChild("Hello World", "John Doe") // Error - Multiple arguments are not supported and only nodes can be passed
+```
+
+* Inserting HTML via JS
+```javascript
+container.innerHTML = "<strong>Hello World</strong>" // Will render the text as bold
+
+/*
+Note - Using container.innerText here will treat strong tag as part of the string and will not render it as HTML.
+Using innerHTML is the only way to insert HTML into a container via JS. Also, if you show a user generated input using this, it could be a risk as malicious code could be entered.
+
+If you have to display text from user input, it is better to create an element, such as a strong tag, assign its innerText and then append that element to a container.
+*/
+```
+
